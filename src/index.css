@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:200, 400');
+@import url('https://fonts.googleapis.com/css?family=Lustria');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 5%;
+  font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  height: 100vh;
+}
+body:after{
+  position: absolute;
+  display: block;
+  content: '';
+  background-image: url('./background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+#root{
+  position: relative;
+  z-index: 2;
+  
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Lustria";
+  font-weight: 100;
+  color: #222;
+}
+
+p {
+  color: #555;
+}
+
+.blue {
+  color: #477ACC;
+}
+
+.yellow {
+  color: #EAC435;
+}
+
+.green {
+  color: #09a55e;
+}
+
+.red {
+  color: #CA1551;
+}
+
+.orange {
+  color: #FB4D3D;
+}
