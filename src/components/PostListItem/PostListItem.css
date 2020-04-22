@@ -3,9 +3,8 @@
   display: flex;
   flex-direction: column;
   border: 0;
-  font-size: smaller;
   text-decoration: none;
-  box-shadow: 0px 11px 21px -8px rgba(241, 239, 237, 0.8);
+  box-shadow: 3px 3px 5px 6px #ccc;
   margin-bottom: 40px;
   margin-right: 20px;
   border-radius: 10px;
@@ -17,10 +16,6 @@
   transition: all 0.5s ease-in-out 0s
 }
 
-.PostListItem,
-.PostListItem:visited {
-  color: #555;
-}
 
 .PostListItem__image {
   height: 250px;
@@ -38,14 +33,9 @@
   justify-content: space-between;
   width: 275px;
 }
-
 .PostListItem__details h2 {
   margin: 0;
 }
 
 
-.PostListItem__details span {
-  display: block;
-  text-align: center;
-  opacity: 0.5;
-}
+

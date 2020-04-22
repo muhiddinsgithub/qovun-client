@@ -24,11 +24,11 @@ class HomePageAfterLogin extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="HomePageAfterLogin">
         Welcome, {this.state.name}
         <ul id="afterLoginNav">
-          <li><Link to="/add-post">Add a post</Link></li> |
-          <li><Link to="/post-history">Your recent posts</Link></li>
+          <li><Link to="/add-post">add a post</Link></li> |
+          <li><Link to="/post-history">my posts</Link></li>
         </ul>
       </div>
     )

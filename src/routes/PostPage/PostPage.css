@@ -1,9 +1,20 @@
 .PostPage{
-  margin-top: 100px;
+  margin-top: 50px;
+}
+
+.PostPage__title {
+  padding: 10px 40px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: black;
+  background-color: rgb(190, 183, 183);
 }
 .PostPage__content {
-  margin-bottom: 30px;
-  color: white;
+  padding: 20px 40px;
+  line-height: 2;
+  font-size: 1.3em;
+  color: black;
+  background-color: rgb(236, 231, 231);
 }
 .edit-button, .delete-button {
   float: right;

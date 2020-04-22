@@ -1,4 +1,6 @@
-
+.HomePageAfterLogin {
+  font-size: 1.2em;
+}
 #afterLoginNav {
   list-style-type: none;
 }

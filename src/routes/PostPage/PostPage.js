@@ -27,7 +27,7 @@ export default class PostPage extends Component {
   renderPost() {
     const { post } = this.context;
     return <>
-      <h2>{post.title}</h2>
+      <h2 className="PostPage__title">{post.title}</h2>
       <PostContent post={post} />
     </>
   }
@@ -65,6 +65,7 @@ export default class PostPage extends Component {
       return (
         <Section className='PostPage'>
           {content}
+        <Button className="back" onClick={() => this.props.history.push('/')}>Back</Button>
         </Section>
       )
     }

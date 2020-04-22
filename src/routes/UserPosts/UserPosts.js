@@ -27,7 +27,7 @@ export default class UserPosts extends Component {
   render() {
     const { posts } = this.context;
     return (      
-      <div>        
+      <div className="UserPosts">        
         {posts.map(post =>
         (<PostListItem
           key={post.post_id}

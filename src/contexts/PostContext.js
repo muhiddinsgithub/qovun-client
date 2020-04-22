@@ -40,7 +40,7 @@ export class PostProvider extends Component {
   }
 
   setPosts = posts => {
-    this.setState({ posts })
+    this.setState({ posts });
   }
 
 
