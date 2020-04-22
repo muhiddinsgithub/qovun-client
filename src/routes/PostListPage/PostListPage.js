@@ -9,7 +9,6 @@ export default class PostListPage extends Component {
   static contextType = PostListContext;
 
   componentDidMount() {
-    console.log(this.props.match.params.section);
     this.context.clearError()
     PostApiService.getPosts()
       .then(this.context.setPostList)
@@ -17,13 +16,16 @@ export default class PostListPage extends Component {
   }
 
   renderPosts() {
-    const { postList = [] } = this.context
-    return postList.map(post =>
-      <PostListItem
-        key={post.post_id}
-        post={post}
-      />
-    )
+    const section = this.props.match.params.section; 
+    const { postList = [] } = this.context;
+    // eslint-disable-next-line array-callback-return
+    return postList.map(post => {
+      if(post.section.toLowerCase() === section)
+        return (<PostListItem
+          key={post.post_id}
+          post={post}
+        />)
+    })
   }
 
   render() {

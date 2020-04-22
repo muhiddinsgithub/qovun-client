@@ -48,8 +48,9 @@ export default class Header extends Component {
         </h1>
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
-          : this.renderLoginLink()}
+          : this.renderLoginLink()}          
       </nav>
+      <h2 id="about">Browse/Post Anything About Uzbek Community in the US</h2>
     </>
   }
 }

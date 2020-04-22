@@ -1,0 +1,11 @@
+
+#afterLoginNav {
+  list-style-type: none;
+}
+#afterLoginNav li{
+    display: inline-block;
+}
+#afterLoginNav li a{
+    display: block;
+    padding: 5px 10px;
+}

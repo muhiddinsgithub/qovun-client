@@ -11,7 +11,7 @@ export default PostListContext
 
 export class PostListProvider extends Component {
   state = {
-    thingList: [],
+    postList: [],
     error: null,
   };
 
@@ -30,11 +30,11 @@ export class PostListProvider extends Component {
 
   render() {
     const value = {
-      thingList: this.state.postList,
+      postList: this.state.postList,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
-      setThingList: this.setPostList,
+      setPostList: this.setPostList,
     }
     return (
       <PostListContext.Provider value={value}>

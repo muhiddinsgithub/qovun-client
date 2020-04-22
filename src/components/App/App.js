@@ -10,7 +10,14 @@ import PostPage from '../../routes/PostPage/PostPage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
+import PostForm from '../../routes/PostForm/PostForm';
+import EditPost from '../../routes/EditPost/EditPost';
+import HomePageAfterLogin from '../../routes/HomePageAfterLogin/HomePageAfterLogin';
+
+import TokenService from '../../services/token-service'
+
 import './App.css'
+import UserPosts from '../../routes/UserPosts/UserPosts'
 
 class App extends Component {
   state = { hasError: false }
@@ -24,15 +31,16 @@ class App extends Component {
     return (
       <div className='App'>
         <header className='App__header'>
-          <Header />
+          <Header />          
         </header>
         <main className='App__main'>
           {this.state.hasError && <p className='red'>There was an error! Oh no!</p>}
           <Switch>
-            <PublicOnlyRoute
-              exact path={'/'}
-              component={HomePage}
-            />
+            { TokenService.hasAuthToken()
+            ? <PrivateRoute exact path={'/'} component={HomePageAfterLogin} />
+            : <PublicOnlyRoute exact path={'/'} component={HomePage} />
+            }  
+
             <Route
               exact
               path={'/view/:section'}
@@ -42,12 +50,24 @@ class App extends Component {
               path={'/login'}
               component={LoginPage}
             />
+            <PrivateRoute 
+              path={'/add-post'}
+              component={PostForm}
+            />
+            <PrivateRoute 
+              path={'/posts/edit/:post_id'}
+              component={EditPost}
+            />
+            <PrivateRoute 
+              path={'/post-history'}
+              component={UserPosts}
+            />
             <PublicOnlyRoute
               path={'/register'}
               component={RegistrationPage}
             />
-            <PrivateRoute
-              path={'/post/:post_id'}
+            <Route
+              path={'/posts/:post_id'}
               component={PostPage}
             />
             <Route

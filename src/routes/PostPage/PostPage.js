@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PostContext from '../../contexts/PostContext';
 import PostApiService from '../../services/post-api-service';
-import { Section } from '../../components/Utils/Utils';
+import TokenService from '../../services/token-service';
+import { Section, Button } from '../../components/Utils/Utils';
 import './PostPage.css';
 
 export default class PostPage extends Component {
@@ -12,9 +13,9 @@ export default class PostPage extends Component {
   static contextType = PostContext;
 
   componentDidMount() {
-    const { postId } = this.props.match.params
+    const { post_id } = this.props.match.params;
     this.context.clearError()
-    PostApiService.getPost(postId)
+    PostApiService.getPost(post_id)
       .then(this.context.setPost)
       .catch(this.context.setError)
   }
@@ -24,11 +25,19 @@ export default class PostPage extends Component {
   }
 
   renderPost() {
-    const { post } = this.context
+    const { post } = this.context;
     return <>
       <h2>{post.title}</h2>
       <PostContent post={post} />
     </>
+  }
+
+  handleDelete = () => {
+    const { post_id } = this.props.match.params;
+    PostApiService.deletePost(post_id)
+      .then(this.context.setPost)
+      .catch(this.context.setError);
+    this.props.history.push('/post-history');
   }
 
   render() {
@@ -38,16 +47,28 @@ export default class PostPage extends Component {
       content = (error.error === `Post doesn't exist`)
         ? <p className='red'>Post not found</p>
         : <p className='red'>There was an error</p>
-    } else if (!post.id) {
+    } else if (!post.post_id) {
       content = <div className='loading' />
     } else {
-      content = this.renderPost()
+      content = this.renderPost();
     }
-    return (
-      <Section className='PostPage'>
-        {content}
-      </Section>
-    )
+    if(TokenService.hasAuthToken()) {
+      return (
+        <Section className='PostPage'>
+          {content}
+        <Button className="back" onClick={() => this.props.history.push('/post-history')}>Back</Button>
+        <Button className="delete-button" onClick={this.handleDelete}>Delete</Button>
+        <Button className="edit-button" onClick={() => this.props.history.push(`/posts/edit/${post.post_id}`)}>Edit</Button>
+        </Section>
+      )
+    } else {
+      return (
+        <Section className='PostPage'>
+          {content}
+        </Section>
+      )
+    }
+   
   }
 }
 

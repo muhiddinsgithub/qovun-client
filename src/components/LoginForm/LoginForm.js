@@ -14,7 +14,7 @@ export default class LoginForm extends Component {
     ev.preventDefault()
     this.setState({ error: null })
     const { user_name, password } = ev.target
-
+    
     AuthApiService.postLogin({
       user_name: user_name.value,
       password: password.value,
@@ -37,6 +37,7 @@ export default class LoginForm extends Component {
         className='LoginForm'
         onSubmit={this.handleSubmitJwtAuth}
       >
+        <h3>[user:pass]</h3>
         <div role='alert'>
           {error && <p className='red'>{error}</p>}
         </div>

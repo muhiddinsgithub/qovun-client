@@ -9,7 +9,7 @@ export default class HomePage extends Component {
     super(props);
     this.state = {
       sections: [],
-      value: ''
+      value: '',
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -40,7 +40,7 @@ export default class HomePage extends Component {
           )}        
         </select>
         <div id="posting">
-          <Link to="/register">I'd like to post a job, apt, cars, etc.</Link>
+          <Link to="/register">I'd like to post an event, job, apt, car, etc.</Link>
         </div>
       </div>
     )

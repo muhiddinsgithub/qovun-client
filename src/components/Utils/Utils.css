@@ -48,3 +48,9 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+
+.NiceDate {
+  color: rgb(100, 207, 96);
+  font-weight: bold;
+  font-style: oblique;
+}

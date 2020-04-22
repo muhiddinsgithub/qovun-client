@@ -1,0 +1,11 @@
+.PostPage{
+  margin-top: 100px;
+}
+.PostPage__content {
+  margin-bottom: 30px;
+  color: white;
+}
+.edit-button, .delete-button {
+  float: right;
+  margin-right: 10px;
+}
