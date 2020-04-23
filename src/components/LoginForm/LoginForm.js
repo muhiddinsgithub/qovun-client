@@ -37,13 +37,12 @@ export default class LoginForm extends Component {
         className='LoginForm'
         onSubmit={this.handleSubmitJwtAuth}
       >
-        <h3>[user:pass]</h3>
         <div role='alert'>
           {error && <p className='red'>{error}</p>}
         </div>
         <div className='user_name'>
           <label htmlFor='LoginForm__user_name'>
-            User name
+            User name(guest_user)
           </label>
           <Input
             required
@@ -53,7 +52,7 @@ export default class LoginForm extends Component {
         </div>
         <div className='password'>
           <label htmlFor='LoginForm__password'>
-            Password
+            Password(Guestuser$101)
           </label>
           <Input
             required

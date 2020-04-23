@@ -56,9 +56,11 @@ export default class PostPage extends Component {
       return (
         <Section className='PostPage'>
           {content}
-        <Button className="back" onClick={() => this.props.history.push('/post-history')}>Back</Button>
-        <Button className="delete-button" onClick={this.handleDelete}>Delete</Button>
+        <div className="buttons">
+        <Button className="back-button" onClick={() => this.props.history.push('/post-history')}>Back</Button>
         <Button className="edit-button" onClick={() => this.props.history.push(`/posts/edit/${post.post_id}`)}>Edit</Button>
+        <Button className="delete-button" onClick={this.handleDelete}>Delete</Button>
+        </div>
         </Section>
       )
     } else {

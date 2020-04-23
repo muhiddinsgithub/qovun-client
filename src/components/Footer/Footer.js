@@ -5,8 +5,8 @@ import './Footer.css';
 export default class Footer extends Component {
   render() {
     return (
-      <div id="footer">
-        <a href="https://github.com/muhiddinsgithub" >Designed by @muhiddindc</a>
+      <div className="Footer">
+        <a href="https://github.com/muhiddinsgithub" rel="noopener noreferrer" target="_blank"  className="FooterLink">@muhiddinsgithub</a>
       </div>
     )
   }

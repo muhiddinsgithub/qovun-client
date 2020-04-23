@@ -3,7 +3,7 @@
   justify-content: center;
 }
 .postForm{
-  width: 600px;
+  max-width: 600px;
   margin: 0 auto;
 }
 #section, #content, #title {

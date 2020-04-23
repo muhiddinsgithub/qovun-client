@@ -1,5 +1,6 @@
 .PostPage{
   margin-top: 50px;
+
 }
 
 .PostPage__title {
@@ -16,7 +17,8 @@
   color: black;
   background-color: rgb(236, 231, 231);
 }
-.edit-button, .delete-button {
-  float: right;
-  margin-right: 10px;
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
 }
